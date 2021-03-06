@@ -1,0 +1,155 @@
+// main Box
+%box {
+    width: 75%;
+    background-color: rgba(252, 252, 252, 0.08);
+    background-image: linear-gradient(rgba(252, 252, 252, 0.08), $color-trans);
+    padding: 2rem;
+    margin: 2rem;
+    border-radius: 1rem;
+    box-shadow: 0 0 0.75rem 0 #3232323d;
+}
+
+//  profile 
+%profile {
+    width: 25%;
+    margin: 2rem 1rem;
+    padding: 1rem;
+    background-image: linear-gradient(rgba(252, 252, 252, 0.05), rgba(252, 252, 252, 0.08));
+    border-radius: 1rem;
+    box-shadow: 0 0 0.75rem 0 #3232323d;
+    transition: all 1s ease;
+
+    .profile-img {
+        border-radius: 100%;
+        border: solid 9px rgba(255, 255, 255, 0.5);
+        width: 7rem;
+        height: 7rem;
+        box-shadow: 0 0 0.75rem #fcfcfc;
+        object-fit: cover;
+    }
+
+    .main-nav {
+        display: flex;
+        flex-flow: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+
+        .nav-link {
+            color: $color-dark-purple;
+            font-size: $font-sm;
+            width: 10rem;
+            height: 2rem;
+            padding: 0.5rem;
+            border-radius: 0.25rem;
+            margin-top: 0.25rem;
+            @include transition(all ease-in 0.3s);
+
+            &:hover {
+                color: $color-lite;
+                background: rgba(255, 255, 255, 0.3);
+            }
+        }
+
+        .active {
+            color: $color-lite;
+            background: rgba(255, 255, 255, 0.3);
+        }
+    }
+}
+
+// Social media
+%social-media {
+    width: 14rem;
+    align-items: center;
+    height: 3rem;
+    justify-content: center;
+    display: flex;
+    background: rgba($color: $color-lite, $alpha: 0.5);
+    border-radius: 0.5rem;
+    margin: 0 auto;
+
+    .social-media-link {
+        font-size: 2rem;
+        margin: 0 1.25rem;
+    }
+
+    #linkedin {
+        color: #005fff;
+    }
+
+    #github {
+        color: #fcfcff;
+    }
+
+    #instagram {
+        color: #b73ab1;
+    }
+}
+
+//  profile btn
+%profile-btn {
+    position: absolute;
+    left: 35px;
+    background: #ffffff54;
+    top: 30px;
+    width: 2.5rem;
+    display: flex;
+    height: 2.5rem;
+    border-radius: 100%;
+    transform: rotate(180deg);
+}
+
+// profile animation icon
+%profile-btn-icon {
+    z-index: 100;
+    .ham {
+        cursor: pointer;
+        -webkit-tap-highlight-color: transparent;
+        transition: transform 400ms;
+        -moz-user-select: none;
+        -webkit-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+    }
+
+    .hamRotate.active {
+        transform: rotate(45deg);
+    }
+
+    .hamRotate180.active {
+        transform: rotate(180deg);
+    }
+
+    .line {
+        fill: none;
+        transition: stroke-dasharray 400ms, stroke-dashoffset 400ms;
+        stroke: #000;
+        stroke-width: 5.5;
+        stroke-linecap: round;
+    }
+
+    .ham6 .top {
+        stroke-dasharray: 40 172;
+    }
+
+    .ham6 .middle {
+        stroke-dasharray: 40 111;
+    }
+
+    .ham6 .bottom {
+        stroke-dasharray: 40 172;
+    }
+
+    .ham6.active .top {
+        stroke-dashoffset: -132px;
+    }
+
+    .ham6.active .middle {
+        stroke-dashoffset: -71px;
+    }
+
+    .ham6.active .bottom {
+        stroke-dashoffset: -132px;
+    }
+}

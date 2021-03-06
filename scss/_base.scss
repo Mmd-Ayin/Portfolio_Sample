@@ -1,0 +1,59 @@
+$color-dark:#130f40;
+$color-lite:#f7f1e3;
+$color-pink:#ff758c;
+$color-purple:#7449a2;
+$color-dark-purple:purple;
+$color-trans:transparent;
+
+$font-rubik:"Rubik";
+$font-roboto: "Roboto";
+$font-sm:1rem;
+$font-md: 1.25rem;
+$font-lg:1.5rem;
+
+@font-face {
+    font-family: "Roboto";
+    src: url(../font/Roboto-Medium.ttf)
+}
+
+@font-face {
+    font-family: "Rubik";
+    src: url(../font/Rubik.ttf)
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+    font-size: $font-md;
+    font-family: $font-roboto, $font-rubik;
+
+    &:focus {
+        outline: 0;
+    }
+
+    img {
+        max-width: 100%;
+    }
+
+    body {
+        background: #fcfcfc;
+    }
+}
+
+@mixin heading($font-size, $color, $font-family:$font-roboto) {
+    color: $color;
+    font-size: $font-size;
+    font-family: $font-family;
+}
+
+@mixin transition($values...) {
+    transition: $values;
+    -moz-transition: $values;
+    -webkit-transition: $values;
+    -o-transition: $values;
+}
